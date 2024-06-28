@@ -16,7 +16,21 @@
 	dataSource="${ ds }"
 	sql="insert into dept2 values ( 60, '개발부', '서울')" /> --%>
 
-<s:update var="result" dataSource="${ ds }">
+<%-- <s:update var="result" dataSource="${ ds }">
 	insert into dept2 values (60, '개발부', '부산')
+</s:update> --%>
+
+<!--  select를 제외한 dml, ddl .. -->
+<s:update var="result" dataSource="${ ds }">
+	insert into dept2 values (?, ?, ?)
+	<s:param value="62" />
+	<s:param value="연구부" />
+	<s:param value="대전" />
 </s:update>
+
 결과 : ${ result }
+
+
+
+
+
