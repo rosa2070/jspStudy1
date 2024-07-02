@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ page import="simple1.BoardDAO" %>
 <%@ page import="simple1.BoardTO" %>
 <%@ page import="java.util.ArrayList" %>
 
 <%
-	ArrayList<BoardTO> boardLists = (ArrayList<BoardTO>)request.getAttribute( "boardLists" );
+	BoardDAO dao = new BoardDAO();
+	ArrayList<BoardTO> boardLists = dao.boardList();
 
 	int totalRecord = boardLists.size();
 	
@@ -22,10 +24,11 @@
 		sbHtml.append( "<tr>" );
 		sbHtml.append( "<td>&nbsp;</td>" );
 		sbHtml.append( "<td>" + seq + "</td>" );
+		
 		sbHtml.append( "<td class='left'>" );
-		sbHtml.append( "	<a href='./controller?path=view&seq=" + seq + "'>" + subject + "</a>" );
+		sbHtml.append( "	<a href='board_view1.jsp?seq=" + seq + "'>" + subject + "</a>" );
 		if( wgap == 0 ) {
-			sbHtml.append( "	&nbsp;<img src='./images/icon_new.gif' alt='NEW'>" );
+			sbHtml.append( "	&nbsp;<img src='../../images/icon_new.gif' alt='NEW'>" );
 		}
 		sbHtml.append( "</td>" );
 			
@@ -44,7 +47,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/board.css">
+<link rel="stylesheet" type="text/css" href="../../css/board.css">
 </head>
 
 <body>
@@ -79,7 +82,7 @@
 
 		<div class="btn_area">
 			<div class="align_right">
-				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='./controller?path=write'" />
+				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='board_write1.jsp'" />
 			</div>
 		</div>
 		<!--//게시판-->

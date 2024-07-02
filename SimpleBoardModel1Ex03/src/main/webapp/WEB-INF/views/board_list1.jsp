@@ -22,8 +22,9 @@
 		sbHtml.append( "<tr>" );
 		sbHtml.append( "<td>&nbsp;</td>" );
 		sbHtml.append( "<td>" + seq + "</td>" );
+		
 		sbHtml.append( "<td class='left'>" );
-		sbHtml.append( "	<a href='./controller?path=view&seq=" + seq + "'>" + subject + "</a>" );
+		sbHtml.append( "	<a href='./view.do?seq=" + seq + "'>" + subject + "</a>" );
 		if( wgap == 0 ) {
 			sbHtml.append( "	&nbsp;<img src='./images/icon_new.gif' alt='NEW'>" );
 		}
@@ -79,7 +80,7 @@
 
 		<div class="btn_area">
 			<div class="align_right">
-				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='./controller?path=write'" />
+				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='./write.do'" />
 			</div>
 		</div>
 		<!--//게시판-->

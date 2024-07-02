@@ -40,7 +40,8 @@
 	<p>HOME &gt; 게시판 &gt; <strong>게시판</strong></p>
 </div>
 <div class="con_txt">
-	     m   
+	<form action="./delete_ok.do" method="post" name="dfrm">
+	<input type="hidden" name="seq" value="<%=seq %>" />
 		<div class="contents_sub">	
 			<!--게시판-->
 			<div class="board_write">
@@ -62,8 +63,8 @@
 			
 			<div class="btn_area">
 				<div class="align_left">
-					<input type="button" value="목록" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='./controller?path=list'" />
-					<input type="button" value="보기" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='./controller?path=view&seq=<%=seq %>'" />
+					<input type="button" value="목록" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='./list.do'" />
+					<input type="button" value="보기" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='./view.do?seq=<%=seq %>'" />
 				</div>
 				<div class="align_right">
 					<input type="button" id="dbtn" value="삭제" class="btn_write btn_txt01" style="cursor: pointer;" />
