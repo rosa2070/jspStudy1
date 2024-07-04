@@ -1,5 +1,30 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@page import="com.exam.album.board.model1.AlbumDAO"%>
+<%@page import="com.exam.album.board.model1.AlbumTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%
+	request.setCharacterEncoding("utf-8");
+
+	AlbumTO bto = new AlbumTO();
+	bto.setSeq(request.getParameter("seq"));
+	
+	AlbumDAO dao = new AlbumDAO();
+	bto = dao.albumView(bto);
+	
+	String cpage = request.getParameter("cpage");
+	String seq = bto.getSeq();
+	String subject = bto.getSubject();
+	String writer = bto.getWriter();
+	String mail = bto.getMail();
+	String wip = bto.getWip();
+	String wdate = bto.getWdate();
+	String hit = bto.getHit();
+	String content = bto.getContent();
+	String imagename = bto.getImagename();
+	String latitude = bto.getLatitude();
+	String longitude = bto.getLongitude();
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,33 +50,36 @@
 			<table>
 			<tr>
 				<th width="10%">제목</th>
-				<td width="60%">제주 올레길 좋아요(000.000.000.000)</td>
+				<td width="60%"><%=subject %></td>
 				<th width="10%">등록일</th>
-				<td width="20%">2016.03.02 21:11</td>
+				<td width="20%"><%= wdate %></td>
 			</tr>
 			<tr>
 				<th>글쓴이</th>
-				<td>여행자</td>
+				<td><%= writer + "(" + wip + "/" + mail + ")" %></td>
 				<th>조회</th>
-				<td>345</td>
+				<td><%= hit %></td>
 			</tr>
 			<tr>
 				<th>위치정보</th>
 				<td>
-					위도 : (000.00000) / 경도 : (000.00000)
-					<input type="button" value="지도보기" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='https://www.google.com/maps/@37.50449,127.048860,17z'" /> 
+					위도 : (<%= latitude %>) / 경도 : (<%= longitude %>)
 				</td>
-				<th></th>
-				<td></td>
+				<th>다운로드</th>
+				<td>
+					<a href="../../upload/<%=imagename %>"><%=imagename %> 다운로드</a>
+					<br /><br />
+					<a href="./download.jsp?filename=<%= imagename %>"><%= imagename %> 다운로드</a>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="4" height="200" valign="top" style="padding:20px; line-height:160%">
 					<div id="bbs_file_wrap">
 						<div>
-							<img src="../../upload/607927_1.jpg" width="900" onerror="" /><br />
+							<img src="../../upload/<%=imagename %>" width="900" onerror="" /><br />
 						</div>
 					</div>
-					시간이 되면 또 걷고 싶은 길이네요
+					<%=content %>
 				</td>
 			</tr>			
 			</table>
@@ -97,12 +125,12 @@
 		</div>
 		<div class="btn_area">
 			<div class="align_left">			
-				<input type="button" value="목록" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_list1.jsp'" />
+				<input type="button" value="목록" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_list1.jsp?cpage=<%=cpage %>'" />
 			</div>
 			<div class="align_right">
-				<input type="button" value="수정" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_modify1.jsp'" />
-				<input type="button" value="삭제" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_delete1.jsp'" />
-				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='board_write1.jsp'" />
+				<input type="button" value="수정" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_modify1.jsp?cpage=<%=cpage %>&seq=<%=seq %>'" />
+				<input type="button" value="삭제" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_delete1.jsp?cpage=<%=cpage %>&seq=<%=seq %>'" />
+				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='board_write1.jsp?cpage=<%=cpage %>'" />
 			</div>
 		</div>
 		<!--//게시판-->

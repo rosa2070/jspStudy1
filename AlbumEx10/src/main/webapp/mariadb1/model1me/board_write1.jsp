@@ -13,12 +13,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../../css/board_write.css">
-</head>
 <script type="text/javascript">
 	window.onload = function() {
-		document.getE
-	}
+		document.getElementById('wbtn').onclick = function() {
+			if (document.wfrm.info.checked == false) {
+				alert('동의를 하셔야 합니다.');
+				return false;
+			}
+			if (document.wfrm.writer.value.trim() == "") {
+				alert('이름을 입력하셔야 합니다.');
+				return false;
+			}
+			if (document.wfrm.password.value.trim() == "") {
+				alert('비밀번호를 입력하셔야 합니다.');
+				return false;
+			}
+			
+			if (document.wfrm.subject.value.trim() == "") {
+				alert('제목을 입력하셔야 합니다.');
+				return false;
+			}
+			if (document.wfrm.upload.value.trim() == "") {
+				alert('파일을 입력하셔야 합니다.');
+				return false;
+			} else {
+				let extension = document.wfrm.upload.value.split('.').pop();
+				if (extension != 'png' && extension != 'jpg' && extension != 'gif') {
+					alert('이미지 파일을 입력하셔야 합니다.');
+					return false;
+				}
+			}
+			document.wfrm.submit();	
+		};
+	};
 </script>
+</head>
+
 <body>
 <!-- 상단 디자인 -->
 <div class="contents1"> 
