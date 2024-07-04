@@ -15,7 +15,7 @@ import java.io.File;
 
 public class AlbumDAO {
 	private DataSource dataSource;
-	private String uploadPath = "C:/Java/jsp-workspace/AlbumCMTModel1Ex01/src/main/webapp/upload";
+	private String uploadPath = "C:/java/jsp-workspace/AlbumCMTModel1Ex01/src/main/webapp/upload/";
 	
 	public AlbumDAO() {
 		// TODO Auto-generated constructor stub

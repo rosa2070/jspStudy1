@@ -33,7 +33,7 @@
 	ArrayList<AlbumTO> albumLists = listTO.getAlbumLists();
 	
 	StringBuilder sbHtml = new StringBuilder();
-	for( int i=0 ; i<recordPerPage ; i++ ) {
+	for( int i=0 ; i<recordPerPage; i++ ) {
 		String seq = "";
 		String subject = "";
 		String writer = "";
@@ -65,9 +65,9 @@
 		sbHtml.append( "				<td class='boardThumbWrap'>" );
 		sbHtml.append( "					<div class='boardThumb'>" );
 		if( seq.equals( "" ) ) {
-	sbHtml.append( "						<img src='../../images/noimage.jpg' border='0' width='200' />" );
+			sbHtml.append( "						<img src='../../images/noimage.jpg' border='0' width='200' />" );
 		} else {
-	sbHtml.append( "						<a href='board_view1.jsp?cpage=" + cpage + "&seq=" + seq + "'><img src='" + imagename + "' border='0' width='200' /></a>" );
+			sbHtml.append( "						<a href='board_view1.jsp?cpage=" + cpage + "&seq=" + seq + "'><img src='" + imagename + "' border='0' width='200' /></a>" );
 		}
 		sbHtml.append( "					</div>" );
 		sbHtml.append( "				</td>" );
@@ -76,14 +76,14 @@
 		sbHtml.append( "				<td>" );
 		sbHtml.append( "					<div class='boardItem'>" );
 		if( seq.equals( "" ) ) {
-	sbHtml.append( "						<strong></strong>" );
-	sbHtml.append( "						<span class='coment_number'></span>" );
+			sbHtml.append( "						<strong></strong>" );
+			sbHtml.append( "						<span class='coment_number'></span>" );
 		} else {
-	sbHtml.append( "						<strong>" + subject +"</strong>" );
-	sbHtml.append( "						<span class='coment_number'><img src='../../images/icon_comment.png' alt='commnet'>" + cmtcnt + "</span>" );
-	if( wgap <= 1 ) {
-		sbHtml.append( "						<img src='../../images/icon_new.gif' alt='NEW'>") ;
-	}
+			sbHtml.append( "						<strong>" + subject +"</strong>" );
+			sbHtml.append( "						<span class='coment_number'><img src='../../images/icon_comment.png' alt='commnet'>" + cmtcnt + "</span>" );
+			if( wgap <= 1 ) {
+				sbHtml.append( "						<img src='../../images/icon_new.gif' alt='NEW'>") ;
+			}
 		}
 		sbHtml.append( "					</div>" );
 		sbHtml.append( "				</td>" );
@@ -94,9 +94,9 @@
 		sbHtml.append( "			<tr>" );
 		sbHtml.append( "				<td>" );
 		if( seq.equals( "" ) ) {
-	sbHtml.append( "					<div class='boardItem'></div>" );
+			sbHtml.append( "					<div class='boardItem'></div>" );
 		} else {
-	sbHtml.append( "					<div class='boardItem'>" + wdate + " <font>|</font> Hit " + hit + "</div>" );
+			sbHtml.append( "					<div class='boardItem'>" + wdate + " <font>|</font> Hit " + hit + "</div>" );
 		}
 		sbHtml.append( "				</td>" );
 		sbHtml.append( "			</tr>") ;
@@ -139,7 +139,7 @@
 	<div class="contents_sub">	
 		<div class="board_top">
 			<div class="bold">
-				<p>총 <span class="txt_orange">1</span>건</p>
+				<p>총 <span class="txt_orange"><%= totalRecord %></span>건</p>
 			</div>
 		</div>	
 		

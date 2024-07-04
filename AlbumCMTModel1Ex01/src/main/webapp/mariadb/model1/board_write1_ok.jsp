@@ -10,7 +10,7 @@
 <%@ page import="java.io.File" %>
 
 <%
-String uploadPath = "C:/Java/jsp-workspace/AlbumCMTModel1Ex01/src/main/webapp/upload";
+	String uploadPath = "C:/Java/jsp-workspace/AlbumCMTModel1Ex01/src/main/webapp/upload";
 	int maxFileSize = 10 * 1024 * 1024;
 	String encoding = "utf-8";
 	

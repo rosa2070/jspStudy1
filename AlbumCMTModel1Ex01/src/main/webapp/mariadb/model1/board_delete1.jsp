@@ -5,7 +5,7 @@
 <%@ page import="com.exam.album.board.model1.AlbumDAO" %>
 
 <%
-request.setCharacterEncoding( "utf-8" );
+	request.setCharacterEncoding( "utf-8" );
 
 	AlbumTO to = new AlbumTO();
 	to.setSeq( request.getParameter( "seq" ) );

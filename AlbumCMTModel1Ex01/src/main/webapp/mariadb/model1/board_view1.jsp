@@ -69,8 +69,12 @@
 				<td>
 					위도 : (<%=latitude %>) / 경도 : (<%=longitude %>)
 				</td>
-				<th></th>
-				<td></td>
+				<th>다운로드</th>
+				<td>
+					<a href="../../upload/<%=imagename %>"><%=imagename %> 다운로드</a>
+					<br /><br />
+					<a href="./download.jsp?filename=<%=imagename %>"><%=imagename %> 다운로드</a>
+				</td>
 			</tr>		
 			<tr>
 				<td colspan="4" height="200" valign="top" style="padding:20px; line-height:160%">
