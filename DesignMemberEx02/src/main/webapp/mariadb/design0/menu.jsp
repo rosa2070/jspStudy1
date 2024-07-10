@@ -13,14 +13,14 @@
       
 			<ul class="nav nav-pills">
 				<!-- 로그인 전 -->
-				<!--
 				<li class="nav-item"><a class="nav-link" href="./login.jsp">로그인 </a></li>
 				<li class="nav-item"><a class="nav-link" href="./addMember.jsp">회원 가입</a></li>
-				 -->
 				<!-- 로그인 후 -->
+				<!--
 				<li class="nav-item"><a class="nav-link">[사용자님]</a></li>
 				<li class="nav-item"><a class="nav-link" href="./logout.jsp">로그아웃 </a></li>
 				<li class="nav-item"><a class="nav-link" href="./modifyMember.jsp">회원 수정</a></li>
+				  -->
 			</ul> 
 		</div>
 	</div>   

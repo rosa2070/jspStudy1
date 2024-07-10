@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<a href="./mariadb/designmy/">메인 페이지</a>
+<a href="./mariadb/design0/">메인 페이지</a>
 
 </body>
 </html>

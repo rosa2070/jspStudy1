@@ -9,58 +9,59 @@
 </head>
 <body>
 <div class="container py-4">
-   
-   <jsp:include page="./menu.jsp" />
+	
+	<jsp:include page="./menu.jsp" />  
 
 	<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 		<div class="container-fluid py-5">
-			<h1 class="display-5 fw-bold">회원 수정</h1>
-			<p class="col-md-8 fs-4">Membership Updating</p>      
+			<h1 class="display-5 fw-bold">회원 가입</h1>
+			<p class="col-md-8 fs-4">Membership Joining</p>      
 		</div>
 	</div>
-    
+	
 	<div class="container">
-		<form action="" method="post" name="mfrm">
+		<form action="" method="post" name="wfrm">
 			<div class="mb-3 row">
-				<label class="col-sm-2">아이디</label>
+				<label class="col-sm-2 ">아이디</label>
 				<div class="col-sm-3">
-					<input type="text" name="id" value="" class="form-control" placeholder="id" />
+					<input type="text" name="id" class="form-control" placeholder="id" />
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">비밀번호</label>
 				<div class="col-sm-3">
-					<input type="password" name="password" value="" class="form-control" placeholder="password" />
+					<input type="password" name="password" class="form-control" placeholder="password" />
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">비밀번호확인</label>
 				<div class="col-sm-3">
-					<input type="password" name="password_confirm" class="form-control" placeholder="password_confirm" />
+					<input type="password" name="password_confirm" class="form-control" placeholder="password confirm" />
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">이름</label>
 				<div class="col-sm-3">
-					<input type="text" name="name" value="" class="form-control" placeholder="name" />
+					<input type="text" name="name" class="form-control" placeholder="name" />
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">성별</label>
 				<div class="col-sm-10">
-					<input type="radio" name="gender" value="남"	checked />남 
-					<input type="radio" name="gender" value="여"	/>여
+					<input type="radio" name="gender" value="m" checked /> 남 
+					<input type="radio" name="gender" value="f" /> 여
 				</div>
 			</div>
+			
 			<div class="mb-3 row">
 				<label class="col-sm-2">생일</label>
 				<div class="col-sm-10">
 					<div class="row">
 						<div class="col-sm-2">
-							<input type="text" name="birthyy" value="" size="6" maxlength="4" class="form-control" placeholder="년(4자)" /> 
+							<input type="text" name="birthyy" size="6" maxlength="4" class="form-control" placeholder="년(4자)" /> 
 						</div>
 						<div class="col-sm-2">
-							<select name="birthmm" id="birthmm" class="form-select">
+							<select name="birthmm" class="form-select">
 								<option value="">월</option>
 								<option value="01">1</option>
 								<option value="02">2</option>
@@ -77,20 +78,21 @@
 							</select> 
 						</div>
 						<div class="col-sm-2">
-							<input type="text" name="birthdd" value="" size="4" maxlength="2" class="form-control" placeholder="일" />
+							<input type="text" name="birthdd" size="4" maxlength="2" class="form-control" placeholder="일" />
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div class="mb-3 row">
 				<label class="col-sm-2">이메일</label>
 				<div class="col-sm-10">
 					<div class="row">
 						<div class="col-sm-4">
-							<input type="text" name="mail1" maxlength="50" value="" class="form-control" />
+							<input type="text" name="mail1" maxlength="50" class="form-control" placeholder="email" />
 						</div> @
 						<div class="col-sm-3">
-							<select name="mail2" id="mail2" class="form-select">
+							<select name="mail2" class="form-select">
 								<option selected>naver.com</option>
 								<option>daum.net</option>
 								<option>gmail.com</option>
@@ -98,30 +100,30 @@
 							</select>
 						</div>
 					</div>
-				</div>
-			</div>		
+				</div>		
+			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">전화번호</label>
 				<div class="col-sm-3">
-					<input type="text" name="phone" value="" class="form-control" placeholder="phone" />
+					<input type="text" name="phone" class="form-control" placeholder="phone" />
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">주소</label>
 				<div class="col-sm-5">
-					<input type="text" name="address" value="" class="form-control" placeholder="address" />
+					<input type="text" name="address" class="form-control" placeholder="address" />
 				</div>
 			</div>
 			<div class="mb-3 row">
-				<div class="col-sm-offset-2 col-sm-10  text-center">
-					<input type="submit" value="회원수정" class="btn btn-primary" /> 
-					<a href="deleteMember.jsp" class="btn btn-primary">회원탈퇴</a>
+				<div class="col-sm-offset-2 col-sm-10 text-center">
+					<input type="submit" value="회원등록" class="btn btn-primary" /> 
+					<input type="reset" value="등록취소" class="btn btn-primary" />
 				</div>
 			</div>
-		</form>	
+		</form>
 	</div>
-	
-	<jsp:include page="./footer.jsp" />  
+
+   <jsp:include page="./footer.jsp" />
 
 </div>	
 

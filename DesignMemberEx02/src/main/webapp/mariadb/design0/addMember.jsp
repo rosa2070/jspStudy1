@@ -48,8 +48,8 @@
 			<div class="mb-3 row">
 				<label class="col-sm-2">성별</label>
 				<div class="col-sm-10">
-					<input type="radio" name="gender" value="남" checked /> 남 
-					<input type="radio" name="gender" value="여" /> 여
+					<input type="radio" name="gender" value="m" checked /> 남 
+					<input type="radio" name="gender" value="f" /> 여
 				</div>
 			</div>
 			
@@ -104,12 +104,22 @@
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">전화번호</label>
-				<div class="col-sm-3">
+				<div class="col-sm-2">
+					<input type="text" name="phone" class="form-control" placeholder="phone" value="010" />
+				</div> - 
+				<div class="col-sm-2">
+					<input type="text" name="phone" class="form-control" placeholder="phone" />
+				</div> - 
+				<div class="col-sm-2">
 					<input type="text" name="phone" class="form-control" placeholder="phone" />
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-2">주소</label>
+				<div class="col-sm-3 d-flex">
+					<input type="text" name="address" class="form-control" placeholder="address" />
+					&nbsp;<input type="submit" value="주소검색" class="btn btn-primary" /> 
+				</div>
 				<div class="col-sm-5">
 					<input type="text" name="address" class="form-control" placeholder="address" />
 				</div>
