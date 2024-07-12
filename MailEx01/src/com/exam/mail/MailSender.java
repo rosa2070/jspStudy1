@@ -15,8 +15,8 @@ public class MailSender {
 	private String fromPassword;
 	
 	public MailSender() {
-		this.fromEmail = "rosa207061@gmail.com";
-		this.fromPassword = "msmtglbwhnlprfyt";
+		this.fromEmail = "rosa207061@gmail.com"; //gmail
+		this.fromPassword = "msmtglbwhnlprfyt"; // 앱 비밀번호
 	}
 	
 	public static void main(String[] args) {
